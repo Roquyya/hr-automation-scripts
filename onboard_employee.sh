@@ -21,7 +21,8 @@ sudo useradd -m -c "$fullname" "$username"
 echo "$username:$temp_pass" | sudo chpasswd
 
 #Force password change on first login
-sudo change -d 0 "$username"
+sudo chage -d 0 "$username"
+
 
 #Step 4: Print success message 
 echo "user '$username' has been created successfully."
@@ -29,8 +30,3 @@ echo "temporary password: $temp_pass"
 
 #Step 5: Log the onboarding event
 echo "$username - $(date)" >> onboarding.log
-
-git add onboard_employee.sh
-git commit -m "feat: Create initial employee onboarding scripts"
-git push -u origin feature/onboarding-scripts
-
