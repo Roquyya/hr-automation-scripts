@@ -30,3 +30,4 @@ echo "temporary password: $temp_pass"
 
 #Step 5: Log the onboarding event
 echo "$username - $(date)" >> onboarding.log
+
